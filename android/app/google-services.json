@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "252609227792",
+    "project_id": "carbontrakk",
+    "storage_bucket": "carbontrakk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252609227792:android:45c99f7418d0e36954ae95",
+        "android_client_info": {
+          "package_name": "com.mycompany.carbontrakk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWtNxhGlCLHuh1ruaKSKS14hDMCjmJs94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
