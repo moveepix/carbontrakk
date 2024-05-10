@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'onboarding_widget.dart' show OnboardingWidget;
+import 'on_boarding_widget.dart' show OnBoardingWidget;
 import 'package:flutter/material.dart';
 
-class OnboardingModel extends FlutterFlowModel<OnboardingWidget> {
+class OnBoardingModel extends FlutterFlowModel<OnBoardingWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

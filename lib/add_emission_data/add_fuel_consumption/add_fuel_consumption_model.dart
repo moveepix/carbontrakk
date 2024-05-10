@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'add_fuel_consumption_widget.dart' show AddFuelConsumptionWidget;
@@ -9,35 +10,63 @@ class AddFuelConsumptionModel
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
+  // State field(s) for Activity widget.
+  FocusNode? activityFocusNode;
+  TextEditingController? activityTextController;
+  String? Function(BuildContext, String?)? activityTextControllerValidator;
+  String? _activityTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
+  // State field(s) for DropDownEF widget.
+  int? dropDownEFValue;
+  FormFieldController<int>? dropDownEFValueController;
+  // State field(s) for DropDownYear widget.
+  String? dropDownYearValue;
+  FormFieldController<String>? dropDownYearValueController;
   DateTime? datePicked;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for DropDownMonth widget.
+  String? dropDownMonthValue;
+  FormFieldController<String>? dropDownMonthValueController;
+  // State field(s) for Consumption widget.
+  FocusNode? consumptionFocusNode;
+  TextEditingController? consumptionTextController;
+  String? Function(BuildContext, String?)? consumptionTextControllerValidator;
+  String? _consumptionTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    if (val.isEmpty) {
+      return '1';
+    }
+
+    return null;
+  }
+
+  // Stores action output result for [Backend Call - Query Rows] action in Consumption widget.
+  List<EmissionFactorRow>? efValue;
+  // Stores action output result for [Custom Action - emissionCalculation] action in Consumption widget.
+  double? emission;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    activityTextControllerValidator = _activityTextControllerValidator;
+    consumptionTextControllerValidator = _consumptionTextControllerValidator;
+  }
 
   @override
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    activityFocusNode?.dispose();
+    activityTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    consumptionFocusNode?.dispose();
+    consumptionTextController?.dispose();
   }
 }

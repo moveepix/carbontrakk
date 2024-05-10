@@ -33,18 +33,18 @@ class EmissionRow extends SupabaseDataRow {
   double get emissionValue => getField<double>('emission_value')!;
   set emissionValue(double value) => setField<double>('emission_value', value);
 
-  int? get efId => getField<int>('ef_id');
-  set efId(int? value) => setField<int>('ef_id', value);
-
-  int? get businessId => getField<int>('business_id');
-  set businessId(int? value) => setField<int>('business_id', value);
-
   String? get userId => getField<String>('user_id');
   set userId(String? value) => setField<String>('user_id', value);
 
   String get monthIdn => getField<String>('month_idn')!;
   set monthIdn(String value) => setField<String>('month_idn', value);
 
-  int get year => getField<int>('year')!;
-  set year(int value) => setField<int>('year', value);
+  String get year => getField<String>('year')!;
+  set year(String value) => setField<String>('year', value);
+
+  int? get efId => getField<int>('ef_id');
+  set efId(int? value) => setField<int>('ef_id', value);
+
+  String get emissionType => getField<String>('emission_type')!;
+  set emissionType(String value) => setField<String>('emission_type', value);
 }

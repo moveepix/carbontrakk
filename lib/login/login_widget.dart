@@ -90,26 +90,25 @@ class _LoginWidgetState extends State<LoginWidget>
         body: Container(
           height: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                FlutterFlowTheme.of(context).primary,
-                FlutterFlowTheme.of(context).tertiary
-              ],
-              stops: const [0.0, 1.0],
-              begin: const AlignmentDirectional(0.87, -1.0),
-              end: const AlignmentDirectional(-0.87, 1.0),
+            color: FlutterFlowTheme.of(context).secondaryBackground,
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.asset(
+                'assets/images/bgCover.jpeg',
+              ).image,
             ),
           ),
           alignment: const AlignmentDirectional(0.0, -1.0),
-          child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 32.0),
                   child: Container(
-                    width: 200.0,
+                    width: 300.0,
                     height: 70.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
@@ -119,7 +118,7 @@ class _LoginWidgetState extends State<LoginWidget>
                       borderRadius: BorderRadius.circular(8.0),
                       child: SvgPicture.asset(
                         'assets/images/carbontrakk-logo.svg',
-                        width: 400.0,
+                        width: double.infinity,
                         height: 200.0,
                         fit: BoxFit.fitWidth,
                       ),
@@ -134,7 +133,7 @@ class _LoginWidgetState extends State<LoginWidget>
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryBackground,
                       boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
@@ -156,36 +155,39 @@ class _LoginWidgetState extends State<LoginWidget>
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              'Welcome Back',
+                              'Sign in',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
-                                  .displaySmall
+                                  .headlineLarge
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
-                                        .displaySmallFamily,
+                                        .headlineLargeFamily,
                                     letterSpacing: 0.0,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
-                                                .displaySmallFamily),
+                                                .headlineLargeFamily),
                                   ),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 24.0),
                               child: Text(
-                                'Fill out the information below in order to access your account.',
+                                'Start your journey towards understanding and reducing your business’s carbon footprint.',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
-                                    .labelMedium
+                                    .labelLarge
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
-                                          .labelMediumFamily,
+                                          .labelLargeFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
                                               FlutterFlowTheme.of(context)
-                                                  .labelMediumFamily),
+                                                  .labelLargeFamily),
                                     ),
                               ),
                             ),
@@ -207,11 +209,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                 text: 'Continue with Google',
                                 icon: const FaIcon(
                                   FontAwesomeIcons.google,
-                                  size: 20.0,
+                                  size: 24.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,
-                                  height: 44.0,
+                                  height: 56.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(
@@ -233,8 +235,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                       ),
                                   elevation: 0.0,
                                   borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(12.0),

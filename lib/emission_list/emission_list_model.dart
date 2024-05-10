@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'add_emission_data_widget.dart' show AddEmissionDataWidget;
+import 'emission_list_widget.dart' show EmissionListWidget;
 import 'package:flutter/material.dart';
 
-class AddEmissionDataModel extends FlutterFlowModel<AddEmissionDataWidget> {
+class EmissionListModel extends FlutterFlowModel<EmissionListWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

@@ -257,14 +257,14 @@ class MobileTypography extends Typography {
   String get titleMediumFamily => 'Inter Tight';
   TextStyle get titleMedium => GoogleFonts.getFont(
         'Inter Tight',
-        color: theme.info,
+        color: theme.primary,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
   String get titleSmallFamily => 'Inter Tight';
   TextStyle get titleSmall => GoogleFonts.getFont(
         'Inter Tight',
-        color: theme.info,
+        color: theme.primary,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );

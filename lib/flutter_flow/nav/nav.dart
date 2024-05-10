@@ -8,7 +8,6 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -74,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const OnboardingWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const OnBoardingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const OnboardingWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const OnBoardingWidget(),
         ),
         FFRoute(
           name: 'HomePage',
@@ -91,9 +90,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const HomePageWidget(),
         ),
         FFRoute(
-          name: 'onboarding',
-          path: '/onboarding',
-          builder: (context, params) => const OnboardingWidget(),
+          name: 'OnBoarding',
+          path: '/onBoarding',
+          builder: (context, params) => const OnBoardingWidget(),
         ),
         FFRoute(
           name: 'Login',
@@ -101,11 +100,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
-          name: 'profile',
+          name: 'Profile',
           path: '/Profile',
           requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'profile')
+              ? const NavBarPage(initialPage: 'Profile')
               : const ProfileWidget(),
         ),
         FFRoute(
@@ -115,22 +114,82 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const BusinessDetailWidget(),
         ),
         FFRoute(
-          name: 'AddEmissionData',
-          path: '/AddEmissionList',
+          name: 'ElectricityList',
+          path: '/ElectricityList',
           requireAuth: true,
-          builder: (context, params) => const AddEmissionDataWidget(),
+          builder: (context, params) => const ElectricityListWidget(),
         ),
         FFRoute(
-          name: 'AddFuelConsumption',
+          name: 'EmissionList',
+          path: '/emissionList',
+          requireAuth: true,
+          builder: (context, params) => const EmissionListWidget(),
+        ),
+        FFRoute(
+          name: 'addElectricityConsumption',
+          path: '/addElectricityConsumption',
+          requireAuth: true,
+          builder: (context, params) => const AddElectricityConsumptionWidget(),
+        ),
+        FFRoute(
+          name: 'addVehicle',
+          path: '/addVehicleConsumption',
+          requireAuth: true,
+          builder: (context, params) => const AddVehicleWidget(),
+        ),
+        FFRoute(
+          name: 'VehicleList',
+          path: '/VehicleList',
+          requireAuth: true,
+          builder: (context, params) => const VehicleListWidget(),
+        ),
+        FFRoute(
+          name: 'FuelList',
+          path: '/FuelList',
+          requireAuth: true,
+          builder: (context, params) => const FuelListWidget(),
+        ),
+        FFRoute(
+          name: 'WaterList',
+          path: '/WaterList',
+          requireAuth: true,
+          builder: (context, params) => const WaterListWidget(),
+        ),
+        FFRoute(
+          name: 'addWaterUsage',
+          path: '/addWaterUsage',
+          requireAuth: true,
+          builder: (context, params) => const AddWaterUsageWidget(),
+        ),
+        FFRoute(
+          name: 'addFuelConsumption',
           path: '/addFuelConsumption',
           requireAuth: true,
           builder: (context, params) => const AddFuelConsumptionWidget(),
         ),
         FFRoute(
-          name: 'FuelConsumptionList',
-          path: '/fuelConsumptionList',
+          name: 'EmployeeCommuntingList',
+          path: '/EmployeeCommuntingList',
           requireAuth: true,
-          builder: (context, params) => const FuelConsumptionListWidget(),
+          builder: (context, params) => const EmployeeCommuntingListWidget(),
+        ),
+        FFRoute(
+          name: 'WasteList',
+          path: '/WasteList',
+          requireAuth: true,
+          builder: (context, params) => const WasteListWidget(),
+        ),
+        FFRoute(
+          name: 'addWaste',
+          path: '/addWaste',
+          requireAuth: true,
+          builder: (context, params) => const AddWasteWidget(),
+        ),
+        FFRoute(
+          name: 'addEmployeeComm',
+          path: '/addEmployeeComm',
+          requireAuth: true,
+          builder: (context, params) => const AddEmployeeCommWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -299,7 +358,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/onboarding';
+            return '/onBoarding';
           }
           return null;
         },
@@ -313,15 +372,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    'assets/images/CarbonTrakkCover.jpeg',
+                    fit: BoxFit.cover,
                   ),
                 )
               : page;
@@ -387,4 +442,14 @@ class RootPageContext {
         value: RootPageContext(true, errorRoute),
         child: child,
       );
+}
+
+extension GoRouterLocationExtension on GoRouter {
+  String getCurrentLocation() {
+    final RouteMatch lastMatch = routerDelegate.currentConfiguration.last;
+    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
+        ? lastMatch.matches
+        : routerDelegate.currentConfiguration;
+    return matchList.uri.toString();
+  }
 }

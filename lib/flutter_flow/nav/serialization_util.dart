@@ -203,14 +203,28 @@ dynamic deserializeParam<T>(
       case ParamType.SupabaseRow:
         final data = json.decode(param) as Map<String, dynamic>;
         switch (T) {
+          case EmissionAnnualSummaryRow:
+            return EmissionAnnualSummaryRow(data);
+          case EmissionAnnualAvgSummaryRow:
+            return EmissionAnnualAvgSummaryRow(data);
           case EmissionFactorTypeRow:
             return EmissionFactorTypeRow(data);
+          case EmissionMontlyAvgSummaryRow:
+            return EmissionMontlyAvgSummaryRow(data);
+          case EmissionViewRow:
+            return EmissionViewRow(data);
+          case ProfilesRow:
+            return ProfilesRow(data);
           case BusinessRow:
             return BusinessRow(data);
           case EmissionFactorRow:
             return EmissionFactorRow(data);
+          case EmissionMonthlySummaryRow:
+            return EmissionMonthlySummaryRow(data);
           case EmissionRow:
             return EmissionRow(data);
+          case EmissionAnnualSummaryByEmissionTypeRow:
+            return EmissionAnnualSummaryByEmissionTypeRow(data);
           case IndustryRow:
             return IndustryRow(data);
           default:
