@@ -1,10 +1,11 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'add_employee_comm_widget.dart' show AddEmployeeCommWidget;
+import 'add_employee_commuting_widget.dart' show AddEmployeeCommutingWidget;
 import 'package:flutter/material.dart';
 
-class AddEmployeeCommModel extends FlutterFlowModel<AddEmployeeCommWidget> {
+class AddEmployeeCommutingModel
+    extends FlutterFlowModel<AddEmployeeCommutingWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -22,17 +23,16 @@ class AddEmployeeCommModel extends FlutterFlowModel<AddEmployeeCommWidget> {
   }
 
   // State field(s) for DropDownEF widget.
-  int? dropDownEFValue;
-  FormFieldController<int>? dropDownEFValueController;
+  double? dropDownEFValue;
+  FormFieldController<double>? dropDownEFValueController;
+  // State field(s) for CountController widget.
+  int? countControllerValue;
   // State field(s) for DropDownYear widget.
   String? dropDownYearValue;
   FormFieldController<String>? dropDownYearValueController;
-  DateTime? datePicked;
   // State field(s) for DropDownMonth widget.
   String? dropDownMonthValue;
   FormFieldController<String>? dropDownMonthValueController;
-  // State field(s) for totalemployee widget.
-  int? totalemployeeValue;
   // State field(s) for Consumption widget.
   FocusNode? consumptionFocusNode;
   TextEditingController? consumptionTextController;

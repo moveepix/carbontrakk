@@ -117,7 +117,7 @@ class _FuelListWidgetState extends State<FuelListWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.safePop();
             },
           ),
           title: Text(
@@ -157,7 +157,7 @@ class _FuelListWidgetState extends State<FuelListWidget> {
                           ),
                     ),
                     Text(
-                      'Stationary tools that use fuel, such as gas generators or lawnmower.',
+                      'Stationary tools that use fuel, such as gas generators, lawnmower or stove.',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -258,7 +258,7 @@ class _FuelListWidgetState extends State<FuelListWidget> {
                             label: DefaultTextStyle.merge(
                               softWrap: true,
                               child: Text(
-                                'Liter',
+                                'Liter | (Item for LPG)',
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(

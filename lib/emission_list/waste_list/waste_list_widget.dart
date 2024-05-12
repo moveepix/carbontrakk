@@ -118,11 +118,11 @@ class _WasteListWidgetState extends State<WasteListWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.safePop();
             },
           ),
           title: Text(
-            'Waste to Landfill',
+            'Waste Disgard',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                   color: Colors.white,

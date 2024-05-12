@@ -24,12 +24,11 @@ class AddElectricityConsumptionModel
   }
 
   // State field(s) for DropDownEF widget.
-  int? dropDownEFValue;
-  FormFieldController<int>? dropDownEFValueController;
+  double? dropDownEFValue;
+  FormFieldController<double>? dropDownEFValueController;
   // State field(s) for DropDownYear widget.
   String? dropDownYearValue;
   FormFieldController<String>? dropDownYearValueController;
-  DateTime? datePicked;
   // State field(s) for DropDownMonth widget.
   String? dropDownMonthValue;
   FormFieldController<String>? dropDownMonthValueController;

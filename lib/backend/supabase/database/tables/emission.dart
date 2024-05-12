@@ -47,4 +47,7 @@ class EmissionRow extends SupabaseDataRow {
 
   String get emissionType => getField<String>('emission_type')!;
   set emissionType(String value) => setField<String>('emission_type', value);
+
+  double? get efValue => getField<double>('ef_value');
+  set efValue(double? value) => setField<double>('ef_value', value);
 }

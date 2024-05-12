@@ -118,11 +118,11 @@ class _VehicleListWidgetState extends State<VehicleListWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.safePop();
             },
           ),
           title: Text(
-            'Vehicle Activity',
+            'Business Vehicle',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                   color: Colors.white,

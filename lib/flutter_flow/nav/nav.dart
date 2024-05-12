@@ -186,10 +186,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AddWasteWidget(),
         ),
         FFRoute(
-          name: 'addEmployeeComm',
-          path: '/addEmployeeComm',
+          name: 'addEmployeeCommuting',
+          path: '/addEmployeeCommuting',
           requireAuth: true,
-          builder: (context, params) => const AddEmployeeCommWidget(),
+          builder: (context, params) => const AddEmployeeCommutingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -6,7 +6,18 @@ import 'package:flutter/material.dart';
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ///  Local state fields for this page.
 
-  double? decimalmax2;
+  List<EmissionAnnualSummaryByEmissionTypeRow> emissionSum = [];
+  void addToEmissionSum(EmissionAnnualSummaryByEmissionTypeRow item) =>
+      emissionSum.add(item);
+  void removeFromEmissionSum(EmissionAnnualSummaryByEmissionTypeRow item) =>
+      emissionSum.remove(item);
+  void removeAtIndexFromEmissionSum(int index) => emissionSum.removeAt(index);
+  void insertAtIndexInEmissionSum(
+          int index, EmissionAnnualSummaryByEmissionTypeRow item) =>
+      emissionSum.insert(index, item);
+  void updateEmissionSumAtIndex(int index,
+          Function(EmissionAnnualSummaryByEmissionTypeRow) updateFn) =>
+      emissionSum[index] = updateFn(emissionSum[index]);
 
   ///  State fields for stateful widgets in this page.
 

@@ -118,11 +118,11 @@ class _ElectricityListWidgetState extends State<ElectricityListWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.safePop();
             },
           ),
           title: Text(
-            'Electricity Consumption',
+            'Electricity usage',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                   color: Colors.white,
@@ -158,7 +158,7 @@ class _ElectricityListWidgetState extends State<ElectricityListWidget> {
                           ),
                     ),
                     Text(
-                      'Business electricity usage',
+                      'Business electricity consumption',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).bodyMediumFamily,

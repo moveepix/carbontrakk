@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,26 +10,29 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'add_waste_model.dart';
-export 'add_waste_model.dart';
+import 'add_employee_commuting_model.dart';
+export 'add_employee_commuting_model.dart';
 
-class AddWasteWidget extends StatefulWidget {
-  const AddWasteWidget({super.key});
+class AddEmployeeCommutingWidget extends StatefulWidget {
+  const AddEmployeeCommutingWidget({super.key});
 
   @override
-  State<AddWasteWidget> createState() => _AddWasteWidgetState();
+  State<AddEmployeeCommutingWidget> createState() =>
+      _AddEmployeeCommutingWidgetState();
 }
 
-class _AddWasteWidgetState extends State<AddWasteWidget> {
-  late AddWasteModel _model;
+class _AddEmployeeCommutingWidgetState
+    extends State<AddEmployeeCommutingWidget> {
+  late AddEmployeeCommutingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AddWasteModel());
+    _model = createModel(context, () => AddEmployeeCommutingModel());
 
     _model.activityTextController ??= TextEditingController();
     _model.activityFocusNode ??= FocusNode();
@@ -73,7 +77,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
             },
           ),
           title: Text(
-            'Add Waste to Landfill',
+            'Add Employee Commuting',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                   color: Colors.white,
@@ -92,7 +96,6 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
           child: Align(
             alignment: const AlignmentDirectional(0.0, -1.0),
             child: Container(
-              width: double.infinity,
               constraints: const BoxConstraints(
                 maxWidth: 1440.0,
               ),
@@ -100,7 +103,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Form(
                       key: _model.formKey,
@@ -111,7 +114,6 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Column(
                               mainAxisSize: MainAxisSize.max,
@@ -121,7 +123,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
-                                    'Create a label/name for your business waste',
+                                    'Choose a name for this employee commuting activity',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -142,7 +144,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Waste Label/Name',
+                                    labelText: 'Commuting Name',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -219,7 +221,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
-                                    'Select the type of waste your business discards',
+                                    'Choose the vehicle type used for employee commuting.',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -239,7 +241,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                     queryFn: (q) => q
                                         .eq(
                                           'ef_type_id',
-                                          4,
+                                          6,
                                         )
                                         .order('ef_name', ascending: true),
                                   ),
@@ -296,15 +298,13 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMediumFamily),
                                           ),
-                                      hintText: 'Select Waste Type',
+                                      hintText: 'Select Vehicle Type',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         size: 24.0,
                                       ),
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
                                       elevation: 2.0,
                                       borderColor: FlutterFlowTheme.of(context)
                                           .alternate,
@@ -337,7 +337,80 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
-                                    'For which year is this waste data?',
+                                    'How many employees use this type of vehicle for commuting?',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily),
+                                        ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 160.0,
+                                  height: 50.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    shape: BoxShape.rectangle,
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      width: 2.0,
+                                    ),
+                                  ),
+                                  child: FlutterFlowCountController(
+                                    decrementIconBuilder: (enabled) => FaIcon(
+                                      FontAwesomeIcons.minus,
+                                      color: enabled
+                                          ? FlutterFlowTheme.of(context)
+                                              .secondaryText
+                                          : FlutterFlowTheme.of(context)
+                                              .alternate,
+                                      size: 20.0,
+                                    ),
+                                    incrementIconBuilder: (enabled) => FaIcon(
+                                      FontAwesomeIcons.plus,
+                                      color: enabled
+                                          ? FlutterFlowTheme.of(context).primary
+                                          : FlutterFlowTheme.of(context)
+                                              .alternate,
+                                      size: 20.0,
+                                    ),
+                                    countBuilder: (count) => Text(
+                                      count.toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLargeFamily,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLargeFamily),
+                                          ),
+                                    ),
+                                    count: _model.countControllerValue ??= 1,
+                                    updateCount: (count) => setState(() =>
+                                        _model.countControllerValue = count),
+                                    stepSize: 1,
+                                    minimum: 1,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 8.0, 0.0, 0.0),
+                                  child: Text(
+                                    'For which year is this employee commuting data?',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -379,8 +452,6 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                         .secondaryText,
                                     size: 24.0,
                                   ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                   elevation: 2.0,
                                   borderColor:
                                       FlutterFlowTheme.of(context).alternate,
@@ -409,7 +480,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
-                                    'For which month is this waste data?',
+                                    'For which month is this employee commuting data?',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -464,8 +535,6 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                         .secondaryText,
                                     size: 24.0,
                                   ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                   elevation: 2.0,
                                   borderColor:
                                       FlutterFlowTheme.of(context).alternate,
@@ -494,7 +563,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
-                                    'Average amount of waste discarded that month',
+                                    'Average distance traveled by each employee for commuting that month',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -530,11 +599,12 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                               ),
                                             );
                                             _model.emission = await actions
-                                                .emissionCalculation(
-                                              _model.efValue!.first.efValue,
+                                                .emissionEmployeeCalculation(
+                                              _model.dropDownEFValue!,
                                               double.parse(_model
                                                   .consumptionTextController
                                                   .text),
+                                              _model.countControllerValue!,
                                             );
 
                                             setState(() {});
@@ -543,7 +613,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelText: 'Total Waste ',
+                                          labelText: 'Commuting Distance',
                                           labelStyle: FlutterFlowTheme.of(
                                                   context)
                                               .bodyMedium
@@ -641,7 +711,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Text(
-                                        'Kg',
+                                        'Km',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -743,6 +813,8 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                                                       context)
                                                                   .bodyMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
@@ -777,13 +849,13 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                               .activityTextController.text,
                                           'consumption': double.tryParse(_model
                                               .consumptionTextController.text),
-                                          'consumption_unit': 'Kg',
+                                          'consumption_unit': 'Km',
                                           'emission_value': _model.emission,
                                           'user_id': currentUserUid,
                                           'month_idn':
                                               _model.dropDownMonthValue,
                                           'year': _model.dropDownYearValue,
-                                          'emission_type': 'waste',
+                                          'emission_type': 'employee commuting',
                                           'ef_value': _model.dropDownEFValue,
                                         });
                                         ScaffoldMessenger.of(context)
@@ -825,7 +897,8 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                         await Future.delayed(
                                             const Duration(milliseconds: 1000));
 
-                                        context.goNamed('WasteList');
+                                        context
+                                            .goNamed('EmployeeCommuntingList');
                                       },
                                 text: 'Save Data',
                                 options: FFButtonOptions(
@@ -843,7 +916,7 @@ class _AddWasteWidgetState extends State<AddWasteWidget> {
                                             .titleMediumFamily,
                                         color: Colors.white,
                                         letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w500,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
                                                 FlutterFlowTheme.of(context)

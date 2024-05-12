@@ -23,5 +23,5 @@ export '/emission_list/employee_communting_list/employee_communting_list_widget.
     show EmployeeCommuntingListWidget;
 export '/emission_list/waste_list/waste_list_widget.dart' show WasteListWidget;
 export '/add_emission_data/add_waste/add_waste_widget.dart' show AddWasteWidget;
-export '/add_emission_data/add_employee_comm/add_employee_comm_widget.dart'
-    show AddEmployeeCommWidget;
+export '/add_emission_data/add_employee_commuting/add_employee_commuting_widget.dart'
+    show AddEmployeeCommutingWidget;
