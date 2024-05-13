@@ -1,12 +1,13 @@
 // Export pages
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
-export '/on_boarding/on_boarding_widget.dart' show OnBoardingWidget;
-export '/login/login_widget.dart' show LoginWidget;
+export '/pages/on_boarding/on_boarding_widget.dart' show OnBoardingWidget;
+export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/profile/profile_widget.dart' show ProfileWidget;
-export '/business_detail/business_detail_widget.dart' show BusinessDetailWidget;
+export '/pages/business_detail/business_detail_widget.dart'
+    show BusinessDetailWidget;
 export '/emission_list/electricity_list/electricity_list_widget.dart'
     show ElectricityListWidget;
-export '/emission_list/emission_list_widget.dart' show EmissionListWidget;
+export '/pages/emission_list/emission_list_widget.dart' show EmissionListWidget;
 export '/add_emission_data/add_electricity_consumption/add_electricity_consumption_widget.dart'
     show AddElectricityConsumptionWidget;
 export '/add_emission_data/add_vehicle/add_vehicle_widget.dart'
