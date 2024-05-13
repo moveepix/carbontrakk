@@ -1271,7 +1271,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .spaceBetween,
                                                     children: [
                                                       Text(
-                                                        'Water Usage',
+                                                        'Water Utility',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1620,7 +1620,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .spaceBetween,
                                                     children: [
                                                       Text(
-                                                        'Waste Disgard',
+                                                        'Waste Generated',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2079,8 +2079,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           'user_id',
                                                           currentUserUid,
                                                         )
-                                                        .order('year',
-                                                            ascending: true)
+                                                        .order('year')
                                                         .order('sum_emission',
                                                             ascending: true),
                                                   ),
@@ -2169,8 +2168,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               'user_id',
                                                               currentUserUid,
                                                             )
-                                                            .order('year',
-                                                                ascending: true)
+                                                            .order('year')
                                                             .order(
                                                                 'total_emission',
                                                                 ascending:

@@ -122,7 +122,7 @@ class _ElectricityListWidgetState extends State<ElectricityListWidget> {
             },
           ),
           title: Text(
-            'Electricity usage',
+            'Electricity Purchased',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                   color: Colors.white,

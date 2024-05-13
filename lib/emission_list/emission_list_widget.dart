@@ -304,7 +304,7 @@ class _EmissionListWidgetState extends State<EmissionListWidget> {
                         },
                         child: ListTile(
                           title: Text(
-                            'Electricity Usage',
+                            'Electricity Purchased',
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
@@ -512,7 +512,7 @@ class _EmissionListWidgetState extends State<EmissionListWidget> {
                         },
                         child: ListTile(
                           title: Text(
-                            'Waste Disgard',
+                            'Waste Generated',
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
