@@ -42,10 +42,8 @@ class _WaterListWidgetState extends State<WaterListWidget> {
             )
             .order('id'),
       );
-      setState(() {
-        _model.wateremissionlist =
-            _model.waterList!.toList().cast<EmissionRow>();
-      });
+      _model.wateremissionlist = _model.waterList!.toList().cast<EmissionRow>();
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));

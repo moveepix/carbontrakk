@@ -42,9 +42,8 @@ class _FuelListWidgetState extends State<FuelListWidget> {
             )
             .order('id'),
       );
-      setState(() {
-        _model.fuelemissionlist = _model.fuelList!.toList().cast<EmissionRow>();
-      });
+      _model.fuelemissionlist = _model.fuelList!.toList().cast<EmissionRow>();
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));

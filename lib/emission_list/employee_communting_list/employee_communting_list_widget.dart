@@ -44,10 +44,9 @@ class _EmployeeCommuntingListWidgetState
             )
             .order('id'),
       );
-      setState(() {
-        _model.employeeemissionlist =
-            _model.employeecommutingList!.toList().cast<EmissionRow>();
-      });
+      _model.employeeemissionlist =
+          _model.employeecommutingList!.toList().cast<EmissionRow>();
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));

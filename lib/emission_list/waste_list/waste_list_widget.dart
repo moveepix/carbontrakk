@@ -42,10 +42,8 @@ class _WasteListWidgetState extends State<WasteListWidget> {
             )
             .order('id'),
       );
-      setState(() {
-        _model.wasteemissionlist =
-            _model.wasteList!.toList().cast<EmissionRow>();
-      });
+      _model.wasteemissionlist = _model.wasteList!.toList().cast<EmissionRow>();
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));

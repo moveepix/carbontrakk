@@ -42,10 +42,9 @@ class _ElectricityListWidgetState extends State<ElectricityListWidget> {
             )
             .order('id'),
       );
-      setState(() {
-        _model.electricityemission =
-            _model.electricityList!.toList().cast<EmissionRow>();
-      });
+      _model.electricityemission =
+          _model.electricityList!.toList().cast<EmissionRow>();
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));

@@ -42,10 +42,9 @@ class _VehicleListWidgetState extends State<VehicleListWidget> {
             )
             .order('id'),
       );
-      setState(() {
-        _model.vehicleemissionlist =
-            _model.vehicleList!.toList().cast<EmissionRow>();
-      });
+      _model.vehicleemissionlist =
+          _model.vehicleList!.toList().cast<EmissionRow>();
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
